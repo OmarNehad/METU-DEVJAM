@@ -3,7 +3,7 @@ using System;
 public class playerMovement : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public float sides = 100f;
+    public float sides = 38f;
     public float jumpVelocity = 100f;
     private BoxCollider2D boxCollider2D;
     [SerializeField] private LayerMask platformsLayerMask; 
@@ -19,15 +19,23 @@ public class playerMovement : MonoBehaviour
         {
             rb.velocity = Vector2.up * jumpVelocity;
         }
-        else if (Input.GetKey("d")) 
+        handlemovement();
+    }
+
+    private void handlemovement()
+    {
+        if (Input.GetKey("d"))
         {
-            rb.AddForce(new Vector2(sides, 0)); 
+            rb.velocity = new Vector2(sides, rb.velocity.y);
         }
-        else if (Input.GetKey("a")) 
+        else if (Input.GetKey("a"))
         {
-            rb.AddForce(new Vector2(-sides, 0)); 
+            rb.velocity = new Vector2(-sides, rb.velocity.y);
         }
-        
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
     }
 
     private bool IsGrounded()
