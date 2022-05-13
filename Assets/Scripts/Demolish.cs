@@ -17,6 +17,8 @@ public class Demolish : MonoBehaviour
     private float intensity = 0.1f;
 
 
+    //public ParticleSystem dust;
+
     public RectTransform mainCanvas;
 
     private Transform childImage;
@@ -55,6 +57,7 @@ public class Demolish : MonoBehaviour
         childImage.localPosition = new Vector2(
            intensity * Mathf.PerlinNoise(speed * Time.time, 1),0);
         transform.position = new Vector3(transform.position.x, transform.position.y-(demolishRate*Time.deltaTime), transform.position.z);
+        //dust.Play();
  
     }
 
