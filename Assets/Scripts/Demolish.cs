@@ -8,13 +8,13 @@ public class Demolish : MonoBehaviour
     private bool demolish;
     
     [SerializeField]
-    private float demolishRate;
+    private float demolishRate = 1;
     
     [SerializeField]
     private float speed = 5.0f;
     
     [SerializeField]
-    private float intensity = 0.1f;
+    private float intensity = 22f;
 
 
     //public ParticleSystem dust;
@@ -46,7 +46,7 @@ public class Demolish : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.name == "player")
+        if (collision.collider.tag == "Player")
         {
             demolish = true;
         }
