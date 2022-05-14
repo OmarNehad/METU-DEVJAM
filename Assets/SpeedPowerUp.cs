@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class SpeedPowerUp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float increase = 5f;
+    GameObject Player;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.tag == "Player")
+        {
+            GameObject player = collision.gameObject;
+            //Player playerscript = player.GetComponent<Player>();
+        } 
     }
 }
