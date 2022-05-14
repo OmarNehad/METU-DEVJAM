@@ -30,8 +30,8 @@ public class playerMovement : MonoBehaviour
         if (Input.GetKey("d"))
         {
             playerAnim.SetBool("IsMoving", true);
-
             rb.velocity = new Vector2(sides, rb.velocity.y);
+
         }
         else if (Input.GetKey("a"))
         {
