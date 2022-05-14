@@ -451,7 +451,6 @@ MonoBehaviour:
   platformsLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  doubleJump: 0
   jumps: 0
 --- !u!1 &519006914
 GameObject:
@@ -1100,7 +1099,7 @@ GameObject:
   - component: {fileID: 1295498112}
   m_Layer: 0
   m_Name: SpeedPowrUp
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1132,7 +1131,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.4
+  m_Radius: 2
 --- !u!212 &1295498114
 SpriteRenderer:
   m_ObjectHideFlags: 0
