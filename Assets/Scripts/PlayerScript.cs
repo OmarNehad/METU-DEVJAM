@@ -7,6 +7,9 @@ public class PlayerScript : MonoBehaviour
     public float jumpVelocity = 100f;
     private PolygonCollider2D polygonCollider2D;
     [SerializeField] private LayerMask platformsLayerMask;
+    [SerializeField] private AudioSource jumpSound;
+    [SerializeField] private AudioSource simitEating;
+    [SerializeField] private AudioSource drinkingTea;
 
     private bool isRendered = false;
 
@@ -35,6 +38,13 @@ public class PlayerScript : MonoBehaviour
 
         if (collision.gameObject.tag == "PowerUp")
         {
+            simitEating.Play();
+            doubleJump = true;
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.tag == "Tea")
+        {
+            drinkingTea.Play();
             doubleJump = true;
             Destroy(collision.gameObject);
         }
@@ -54,6 +64,7 @@ public class PlayerScript : MonoBehaviour
         var groundBool = IsGrounded();
         if ((groundBool || (doubleJump && jumps < 2)) && Input.GetKeyDown(KeyCode.Space))
         {
+            jumpSound.Play();
             playerAnim.SetBool("IsJumping", true);
             jumps += 1;
             rb.velocity = Vector2.up * jumpVelocity;
