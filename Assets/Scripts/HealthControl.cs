@@ -16,7 +16,6 @@ public class HealthControl : MonoBehaviour
     public  Sprite fullheart;
 
     public Sprite emptyHeart;
-    // Update is called once per frame
 
 
     private void Awake()
