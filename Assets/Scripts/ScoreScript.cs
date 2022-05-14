@@ -17,7 +17,7 @@ public class ScoreScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D tea)
     {
-        if(tea.tag == "shay")
+        if(tea.tag == "shay" || tea.tag == "PowerUp")
         {
             ScoreNum += 1;
             Destroy(tea.gameObject);
