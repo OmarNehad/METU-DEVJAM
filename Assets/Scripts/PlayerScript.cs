@@ -52,6 +52,8 @@ public class PlayerScript : MonoBehaviour
     
     private void Update()
     {
+
+        playerAnim.SetFloat("Velocity",Math.Clamp(rb.velocity.y,-1,1));
         transform.rotation = Quaternion.identity;
 
         if (isRendered && !gameObject.GetComponent<SpriteRenderer>().isVisible)
@@ -62,17 +64,12 @@ public class PlayerScript : MonoBehaviour
         }
 
         var groundBool = IsGrounded();
+        playerAnim.SetBool("IsJumping", !groundBool);
         if ((groundBool || (doubleJump && jumps < 2)) && Input.GetKeyDown(KeyCode.Space))
         {
-            jumpSound.Play();
-            playerAnim.SetBool("IsJumping", true);
+            jumpSound.Play();   
             jumps += 1;
             rb.velocity = Vector2.up * jumpVelocity;
-        }
-        else
-        {
-            playerAnim.SetBool("IsJumping", false);
-
         }
         if (groundBool && jumps == 2)
         {
