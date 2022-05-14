@@ -8,6 +8,8 @@ public class playerMovement : MonoBehaviour
     private BoxCollider2D boxCollider2D;
     [SerializeField] private LayerMask platformsLayerMask;
 
+    private bool isRendered = false;
+
     private Animator playerAnim;
 
     private void Awake() 
@@ -16,8 +18,31 @@ public class playerMovement : MonoBehaviour
         rb = transform.GetComponent<Rigidbody2D>();
         boxCollider2D = transform.GetComponent<BoxCollider2D>(); 
     }
+
+    private void OnRenderObject()
+    {
+
+        isRendered = true;
+
+    }
     private void Update()
     {
+
+        if (isRendered && !gameObject.GetComponent<SpriteRenderer>().isVisible)
+        {
+
+            HealthControl.Instance.DecreaseHelath();
+            transform.position = Vector3.zero;
+            if (HealthControl.Instance.health == 0)
+            {
+                //TODO : SHOW MENU
+            }
+            
+        }
+        else
+        {
+
+        }
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             playerAnim.SetBool("IsJumping", true);
@@ -59,6 +84,7 @@ public class playerMovement : MonoBehaviour
     {
         RaycastHit2D  raycastHit2d = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, .1f, platformsLayerMask);
         //Debug.Log(raycastHit2d.collider);
+        //playerAnim.SetBool("IsJumping");
         return raycastHit2d.collider != null;
     }
 }

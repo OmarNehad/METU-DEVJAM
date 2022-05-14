@@ -17,6 +17,8 @@ public class Demolish : MonoBehaviour
     private float intensity = 1;
 
 
+    public GameObject Fire;
+
     //public ParticleSystem dust;
 
 
@@ -26,6 +28,8 @@ public class Demolish : MonoBehaviour
 
     private void Awake()
     {
+        Fire = Instantiate(Fire);
+        Fire.gameObject.SetActive(false);
         childTransform = transform.GetChild(0);
         //Threshhold = -(mainCanvas.rect.height / 2) - (childImage.GetComponent<RectTransform>().rect.width / 2);
 
@@ -35,10 +39,13 @@ public class Demolish : MonoBehaviour
     {
         if (demolish)
         {
-             DemolishBuilding();
+            Fire.gameObject.SetActive(true);
+            Fire.transform.position = new Vector3(gameObject.transform.position.x,-2.5f, 0);
+            DemolishBuilding();
 
             if (!childTransform.GetComponent<SpriteRenderer>().isVisible)
             {
+                Destroy(Fire);
                 Destroy(gameObject);
             }
     }
@@ -56,9 +63,8 @@ public class Demolish : MonoBehaviour
     private void DemolishBuilding()
     {
         childTransform.localPosition = new Vector2(
-           intensity * Mathf.PerlinNoise(speed * Time.time, 1),0);
+           intensity * Mathf.PerlinNoise(speed * Time.time, -1),0);
         transform.position = new Vector3(transform.position.x, transform.position.y-(demolishRate*Time.deltaTime), transform.position.z);
-        //dust.Play();
  
     }
 

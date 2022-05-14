@@ -5,22 +5,36 @@ using UnityEngine.UI;
 
 public class HealthControl : MonoBehaviour
 {
-    public int health = 3;
-    public Image[] hearts;
 
-    public Sprite fullheart;
+    public static HealthControl Instance { get; set; }
+
+    public  int health = 3;
+
+    public  Image[] hearts;
+
+
+    public  Sprite fullheart;
+
     public Sprite emptyHeart;
     // Update is called once per frame
-    void Update()
+
+
+    private void Awake()
     {
-        foreach ( Image img in hearts)
+        if (Instance != null && Instance != this)
         {
-            img.sprite = emptyHeart;
+            Destroy(this);
         }
-        for ( int i = 0; i < health; i++)
+        else
         {
-            hearts[i].sprite = fullheart;
+            Instance = this;
         }
-        
     }
+    public  void DecreaseHelath()
+    {
+        hearts[health - 1].sprite = emptyHeart;
+        health -=1;
+    }
+
+
 }
