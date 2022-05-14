@@ -47,12 +47,7 @@ public class PlayerScript : MonoBehaviour
         if (isRendered && !gameObject.GetComponent<SpriteRenderer>().isVisible)
         {
 
-            HealthControl.Instance.DecreaseHelath();
-            transform.position = Vector3.zero;
-            if (HealthControl.Instance.health == 0)
-            {
-                //TODO : SHOW MENU
-            }
+               //TODO : SHOW MENU
             
         }
 

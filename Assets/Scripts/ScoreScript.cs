@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ScoreScript : MonoBehaviour
 {
-    public Text MyscoreText;
+    public TextMeshProUGUI MyscoreText;
     private int ScoreNum;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class ScoreScript : MonoBehaviour
         {
             ScoreNum += 1;
             Destroy(tea.gameObject);
-            MyscoreText.text = "Score" + ScoreNum;
+            MyscoreText.text = "Score: " + ScoreNum;
         }
         
     }
