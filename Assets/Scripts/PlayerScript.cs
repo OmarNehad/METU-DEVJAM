@@ -1,6 +1,6 @@
 using UnityEngine;
 using System;
-public class playerMovement : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     private Rigidbody2D rb;
     public float sides = 38f;
@@ -11,6 +11,10 @@ public class playerMovement : MonoBehaviour
     private bool isRendered = false;
 
     private Animator playerAnim;
+
+    private bool doubleJump = false;
+
+    public int jumps;
 
     private void Awake() 
     {
@@ -25,6 +29,17 @@ public class playerMovement : MonoBehaviour
         isRendered = true;
 
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.tag == "PowerUp")
+        {
+            doubleJump = true;
+            Destroy(collision.gameObject);
+        }
+    }
+    
     private void Update()
     {
 
@@ -39,19 +54,23 @@ public class playerMovement : MonoBehaviour
             }
             
         }
-        else
-        {
 
-        }
-        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
+        var groundBool = IsGrounded();
+        if ((groundBool || (doubleJump && jumps < 2)) && Input.GetKeyDown(KeyCode.Space))
         {
             playerAnim.SetBool("IsJumping", true);
-
+            jumps += 1;
             rb.velocity = Vector2.up * jumpVelocity;
         }
         else
         {
             playerAnim.SetBool("IsJumping", false);
+
+        }
+        if (groundBool && jumps == 2)
+        {
+            jumps = 0;
+            doubleJump = false;
 
         }
         handlemovement();
