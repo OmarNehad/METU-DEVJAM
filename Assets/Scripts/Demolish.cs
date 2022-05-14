@@ -33,6 +33,7 @@ public class Demolish : MonoBehaviour
         childTransform = transform.GetChild(0);
         //Threshhold = -(mainCanvas.rect.height / 2) - (childImage.GetComponent<RectTransform>().rect.width / 2);
 
+
     }
 
     private void Update()
