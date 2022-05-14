@@ -19,11 +19,8 @@ public class Demolish : MonoBehaviour
 
     public GameObject Fire;
 
-    //public ParticleSystem dust;
-
 
     private Transform childTransform;
-    //private float Threshhold;
 
 
     private void Awake()
@@ -31,7 +28,6 @@ public class Demolish : MonoBehaviour
         Fire = Instantiate(Fire);
         Fire.gameObject.SetActive(false);
         childTransform = transform.GetChild(0);
-        //Threshhold = -(mainCanvas.rect.height / 2) - (childImage.GetComponent<RectTransform>().rect.width / 2);
 
 
     }
@@ -41,7 +37,7 @@ public class Demolish : MonoBehaviour
         if (demolish)
         {
             Fire.gameObject.SetActive(true);
-            Fire.transform.position = new Vector3(gameObject.transform.position.x,-2.5f, 0);
+            Fire.transform.position = new Vector3(gameObject.transform.position.x,-2.2f, -1.5f);
             DemolishBuilding();
 
             if (!childTransform.GetComponent<SpriteRenderer>().isVisible)
