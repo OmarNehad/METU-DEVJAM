@@ -13,7 +13,7 @@ TagManager:
   - Water
   - UI
   - platforms
-  - 
+  - smoke
   - 
   - 
   - 
@@ -41,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: platform
+    uniqueID: 2091272261
+    locked: 0
+  - name: smoke
+    uniqueID: 1874798435
     locked: 0

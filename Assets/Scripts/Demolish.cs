@@ -54,6 +54,7 @@ public class Demolish : MonoBehaviour
 
     private void DemolishBuilding()
     {
+
         childImage.localPosition = new Vector2(
            intensity * Mathf.PerlinNoise(speed * Time.time, 1),0);
         transform.position = new Vector3(transform.position.x, transform.position.y-(demolishRate*Time.deltaTime), transform.position.z);
