@@ -2,7 +2,7 @@ using UnityEngine;
 using System;
 public class playerMovement : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     public float sides = 38f;
     public float jumpVelocity = 100f;
     private BoxCollider2D boxCollider2D;
@@ -20,7 +20,14 @@ public class playerMovement : MonoBehaviour
     {
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
+            playerAnim.SetBool("IsJumping", true);
+
             rb.velocity = Vector2.up * jumpVelocity;
+        }
+        else
+        {
+            playerAnim.SetBool("IsJumping", false);
+
         }
         handlemovement();
     }
@@ -29,12 +36,14 @@ public class playerMovement : MonoBehaviour
     {
         if (Input.GetKey("d"))
         {
+            GetComponent<SpriteRenderer>().flipX = false;
             playerAnim.SetBool("IsMoving", true);
             rb.velocity = new Vector2(sides, rb.velocity.y);
 
         }
         else if (Input.GetKey("a"))
         {
+            GetComponent<SpriteRenderer>().flipX = true;
             playerAnim.SetBool("IsMoving", true);
             rb.velocity = new Vector2(-sides, rb.velocity.y);
         }
@@ -48,7 +57,7 @@ public class playerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D  raycastHit2d = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, 1f, platformsLayerMask);
+        RaycastHit2D  raycastHit2d = Physics2D.BoxCast(boxCollider2D.bounds.center, boxCollider2D.bounds.size, 0f, Vector2.down, .1f, platformsLayerMask);
         //Debug.Log(raycastHit2d.collider);
         return raycastHit2d.collider != null;
     }

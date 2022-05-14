@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraTrack : MonoBehaviour
+public class CamerFollow : MonoBehaviour
 {
-    
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    public GameObject player1;
-
+    // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player1.transform.position.x, 250, 0);
+        Camera.main.transform.position = new Vector3(transform.position.x, 0,-5);
+        
     }
 }

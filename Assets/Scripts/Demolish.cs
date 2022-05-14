@@ -14,21 +14,20 @@ public class Demolish : MonoBehaviour
     private float speed = 5.0f;
     
     [SerializeField]
-    private float intensity = 22f;
+    private float intensity = 1;
 
 
     //public ParticleSystem dust;
 
-    public RectTransform mainCanvas;
 
-    private Transform childImage;
-    private float Threshhold;
+    private Transform childTransform;
+    //private float Threshhold;
 
 
-    private void Start()
+    private void Awake()
     {
-        childImage = transform.GetChild(0);
-        Threshhold = -(mainCanvas.rect.height / 2) - (childImage.GetComponent<RectTransform>().rect.width / 2);
+        childTransform = transform.GetChild(0);
+        //Threshhold = -(mainCanvas.rect.height / 2) - (childImage.GetComponent<RectTransform>().rect.width / 2);
 
     }
 
@@ -37,11 +36,13 @@ public class Demolish : MonoBehaviour
         if (demolish)
         {
              DemolishBuilding();
-        }
-        if (GetComponent<RectTransform>().anchoredPosition.y < Threshhold)
-        {
-            Destroy(gameObject);
-        }
+
+            if (!childTransform.GetComponent<SpriteRenderer>().isVisible)
+            {
+                Destroy(gameObject);
+            }
+    }
+            
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -54,7 +55,7 @@ public class Demolish : MonoBehaviour
 
     private void DemolishBuilding()
     {
-        childImage.localPosition = new Vector2(
+        childTransform.localPosition = new Vector2(
            intensity * Mathf.PerlinNoise(speed * Time.time, 1),0);
         transform.position = new Vector3(transform.position.x, transform.position.y-(demolishRate*Time.deltaTime), transform.position.z);
         //dust.Play();
