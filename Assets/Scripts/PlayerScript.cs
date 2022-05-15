@@ -73,12 +73,10 @@ public class PlayerScript : MonoBehaviour
         if (isRendered && !gameObject.GetComponent<SpriteRenderer>().isVisible)
         {
 
-            //TODO : SHOW MENU
-<<<<<<< Updated upstream
+            
             deathmenu.SetActive(true);
             
-=======
->>>>>>> Stashed changes
+
 
         }
 
