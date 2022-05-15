@@ -513,7 +513,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 683667615}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1005127115}
+        m_TargetAssemblyTypeName: GameAdministrator, Assembly-CSharp
+        m_MethodName: PlayButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &683667615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,6 +564,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683667612}
   m_CullTransparentMesh: 1
+--- !u!1001 &913661573
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2640965197217922193, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640965197217922193, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640965197217922193, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640965197217922193, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640965197217922193, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640965197217922193, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640965197217922193, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640965197217922193, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640965197217922193, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640965197217922193, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640965197217922193, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2640965197217922198, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+      propertyPath: m_Name
+      value: GameAdministrator
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
 --- !u!1 &968454852
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +697,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968454852}
   m_CullTransparentMesh: 1
+--- !u!114 &1005127115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2640965197217922192, guid: c7ecfe5a520c34a9b8800d3c0f2a77c6, type: 3}
+  m_PrefabInstance: {fileID: 913661573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 257d0c30a5d984f5b96983103309ae6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1216202323
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +875,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1571219001}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1005127115}
+        m_TargetAssemblyTypeName: GameAdministrator, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1571219001
 MonoBehaviour:
   m_ObjectHideFlags: 0
