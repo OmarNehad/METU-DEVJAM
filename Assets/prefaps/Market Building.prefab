@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6205260299042557755}
   - component: {fileID: 6205260299042557753}
   - component: {fileID: 6205260299042557752}
+  - component: {fileID: 557923039206824591}
   m_Layer: 6
   m_Name: Market Building
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6205260299042557754}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -20.7, y: -7.7650003, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
@@ -76,13 +77,36 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 4.2057714, y: 2.1896353}
-      - {x: 4.198598, y: 1.7506831}
+    - - {x: 4.2515807, y: 2.1896353}
+      - {x: 4.244407, y: 1.7873304}
       - {x: 4.414838, y: 1.7610826}
       - {x: 4.3976135, y: 0.58796096}
       - {x: 4.3989353, y: -1.5485141}
       - {x: 6.362404, y: -1.6099126}
       - {x: 6.479291, y: 2.1408916}
+--- !u!68 &557923039206824591
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6205260299042557754}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.0222219, y: -1.8415195}
+  - {x: -1.0808133, y: 0.45759612}
+  - {x: -1.2132543, y: 1.8873286}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &6205260299065145055
 GameObject:
   m_ObjectHideFlags: 0

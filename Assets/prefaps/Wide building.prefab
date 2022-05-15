@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5101686930624496941}
   - component: {fileID: 5101686930624496939}
   - component: {fileID: 1481635565005640905}
+  - component: {fileID: 5982740128897208750}
   m_Layer: 6
   m_Name: Wide building
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5101686930624496940}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.1, y: 4.81, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
@@ -81,11 +82,33 @@ PolygonCollider2D:
       - {x: 1.015934, y: 1.3462701}
       - {x: -1.7402544, y: 1.3201758}
       - {x: -1.712996, y: 1.2052305}
-      - {x: -1.9064302, y: 1.154774}
+      - {x: -1.9250188, y: 1.2198324}
       - {x: -1.9195561, y: -1.3269278}
       - {x: 1.7917982, y: -1.3352879}
       - {x: 1.9244738, y: -0.19442701}
       - {x: 1.242054, y: 0.30901712}
+--- !u!68 &5982740128897208750
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5101686930624496940}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -1.9963408, y: -1.3104602}
+  - {x: -1.9722161, y: 1.2082257}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &5101686931247319021
 GameObject:
   m_ObjectHideFlags: 0
