@@ -110,9 +110,16 @@ public class PlayerScript : MonoBehaviour
 
     private bool IsGrounded()
     {
-        RaycastHit2D  raycastHit2d = Physics2D.BoxCast(polygonCollider2D.bounds.center, polygonCollider2D.bounds.size, 0f, Vector2.down, .1f, platformsLayerMask);
+        if (Physics2D.BoxCast(polygonCollider2D.bounds.center, polygonCollider2D.bounds.size, 0f, Vector2.down, .1f, platformsLayerMask))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
         //Debug.Log(raycastHit2d.collider);
         //playerAnim.SetBool("IsJumping");
-        return raycastHit2d.collider != null;
+        
     }
 }
