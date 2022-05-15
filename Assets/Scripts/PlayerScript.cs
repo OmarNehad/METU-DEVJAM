@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour
     public float sides = 38f;
     public float jumpVelocity = 100f;
     private PolygonCollider2D polygonCollider2D;
+    private EdgeCollider2D edgeCollider2D;
     [SerializeField] private LayerMask platformsLayerMask;
     [SerializeField] private AudioSource jumpSound;
     [SerializeField] private AudioSource simitEating;
@@ -17,8 +18,11 @@ public class PlayerScript : MonoBehaviour
 
     private bool doubleJump = false;
 
+    private bool isWall;
+
     private int jumps;
 
+    public bool groundBool;
 
     public GameObject deathmenu;
 
@@ -27,7 +31,8 @@ public class PlayerScript : MonoBehaviour
         deathmenu.SetActive(false);
         playerAnim = gameObject.GetComponent<Animator>();
         rb = transform.GetComponent<Rigidbody2D>();
-        polygonCollider2D = transform.GetComponent<PolygonCollider2D>(); 
+        polygonCollider2D = transform.GetComponent<PolygonCollider2D>();
+        edgeCollider2D = transform.GetComponent<EdgeCollider2D>();
     }
 
     private void OnRenderObject()
@@ -46,14 +51,19 @@ public class PlayerScript : MonoBehaviour
             doubleJump = true;
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "Tea")
+        else if (collision.gameObject.tag == "shay")
         {
             drinkingTea.Play();
             doubleJump = true;
             Destroy(collision.gameObject);
         }
+        else
+        {
+                isWall = true;
+
+        }
     }
-    
+
     private void Update()
     {
 
@@ -64,17 +74,30 @@ public class PlayerScript : MonoBehaviour
         {
 
             //TODO : SHOW MENU
+<<<<<<< Updated upstream
             deathmenu.SetActive(true);
             
+=======
+>>>>>>> Stashed changes
 
         }
 
-        var groundBool = IsGrounded();
-        playerAnim.SetBool("IsJumping",!groundBool);
-        
-        if ((groundBool || (doubleJump && jumps < 2)) && Input.GetKeyDown(KeyCode.Space))
+
+        if (isWall)
         {
-                
+            groundBool = false;
+            playerAnim.SetBool("IsJumping", true);
+
+        }
+        else
+        {
+            groundBool = IsGrounded();
+            playerAnim.SetBool("IsJumping", !groundBool);
+
+        }
+
+        if ((groundBool || (doubleJump && jumps < 2)) && Input.GetKeyDown(KeyCode.Space))
+        {  
             jumpSound.Play();   
             jumps += 1;
             rb.velocity = Vector2.up * jumpVelocity;
@@ -99,7 +122,7 @@ public class PlayerScript : MonoBehaviour
 
         }
         else if (Input.GetKey("a"))
-        {
+        { 
             GetComponent<SpriteRenderer>().flipX = true;
             playerAnim.SetBool("IsMoving", true);
             rb.velocity = new Vector2(-sides, rb.velocity.y);
@@ -123,7 +146,6 @@ public class PlayerScript : MonoBehaviour
             return false;
         }
         //Debug.Log(raycastHit2d.collider);
-        //playerAnim.SetBool("IsJumping");
-        
+        //playerAnim.SetBool("IsJumping");   
     }
 }

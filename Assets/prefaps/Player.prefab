@@ -108,14 +108,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd7b59c44e03f8448902710a32c6194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sides: 5
-  jumpVelocity: 8
+  sides: 4
+  jumpVelocity: 6
   platformsLayerMask:
     serializedVersion: 2
     m_Bits: 64
   jumpSound: {fileID: 4394690799440948599}
   simitEating: {fileID: 7505814039456273560}
   drinkingTea: {fileID: 4136526159829155027}
+  groundBool: 0
 --- !u!95 &1976377238798910118
 Animator:
   serializedVersion: 4
