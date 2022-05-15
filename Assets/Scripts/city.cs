@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class villageSound : MonoBehaviour
+public class city : MonoBehaviour
 {
 
-    [SerializeField] private AudioSource villageTrack;
+    [SerializeField] private AudioSource cityTrack;
     // Start is called before the first frame update
 
     // Update is called once per frame
