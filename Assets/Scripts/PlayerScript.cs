@@ -19,6 +19,8 @@ public class PlayerScript : MonoBehaviour
 
     private int jumps;
 
+
+    private bool isJumping;
     private void Awake() 
     {
         playerAnim = gameObject.GetComponent<Animator>();
@@ -53,7 +55,7 @@ public class PlayerScript : MonoBehaviour
     private void Update()
     {
 
-        playerAnim.SetFloat("Velocity",Math.Clamp(rb.velocity.y,-1,1));
+        playerAnim.SetFloat("Velocity", rb.velocity.y);
         transform.rotation = Quaternion.identity;
 
         if (isRendered && !gameObject.GetComponent<SpriteRenderer>().isVisible)
@@ -64,13 +66,16 @@ public class PlayerScript : MonoBehaviour
         }
 
         var groundBool = IsGrounded();
-        playerAnim.SetBool("IsJumping", !groundBool);
+        playerAnim.SetBool("IsJumping",!groundBool);
+        
         if ((groundBool || (doubleJump && jumps < 2)) && Input.GetKeyDown(KeyCode.Space))
         {
+                
             jumpSound.Play();   
             jumps += 1;
             rb.velocity = Vector2.up * jumpVelocity;
         }
+
         if (groundBool && jumps == 2)
         {
             jumps = 0;

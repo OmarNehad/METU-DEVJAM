@@ -2551,6 +2551,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1976377238798910113, guid: 3c8f148e2c63cc5428fb15e6d0b3c50a, type: 3}
+      propertyPath: sides
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976377238798910113, guid: 3c8f148e2c63cc5428fb15e6d0b3c50a, type: 3}
+      propertyPath: jumpVelocity
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1976377238798910114, guid: 3c8f148e2c63cc5428fb15e6d0b3c50a, type: 3}
+      propertyPath: MyscoreText
+      value: 
+      objectReference: {fileID: 1360181419}
     - target: {fileID: 1976377238798910115, guid: 3c8f148e2c63cc5428fb15e6d0b3c50a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2650,9 +2662,9 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -1.1429864, y: -0.5033545}
-      - {x: -1.16, y: -0.56}
-      - {x: 1.16, y: -0.56}
-      - {x: 1.1514932, y: -0.4948477}
+      - {x: -1.1245874, y: -0.3829375}
+      - {x: 1.1600012, y: -0.3563781}
+      - {x: 1.1514931, y: -0.56567276}
 --- !u!212 &1826719289
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2713,7 +2725,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1826719287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 68.5, y: -3.45, z: 0}
+  m_LocalPosition: {x: 66.75, y: -1.06, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
