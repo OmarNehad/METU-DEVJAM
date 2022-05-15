@@ -72,8 +72,6 @@ public class PlayerScript : MonoBehaviour
 
         if (isRendered && !gameObject.GetComponent<SpriteRenderer>().isVisible)
         {
-
-            
             deathmenu.SetActive(true);
             
 

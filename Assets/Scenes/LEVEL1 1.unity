@@ -451,7 +451,10 @@ MonoBehaviour:
   platformsLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  jumps: 0
+  jumpSound: {fileID: 0}
+  simitEating: {fileID: 0}
+  drinkingTea: {fileID: 0}
+  deathmenu: {fileID: 0}
 --- !u!1 &519006914
 GameObject:
   m_ObjectHideFlags: 0
